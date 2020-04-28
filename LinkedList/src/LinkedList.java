@@ -45,14 +45,14 @@ public class LinkedList {
             head = head.next; //set the head to the next node
             return;
         }
-        //else, travsel the list...
+        //else, traversal the list...
         Node current = head;
         while (current.next != null) {
             if (current.next.data == dataToDelete) {
                 current.next = current.next.next; //re-map the current Node's next pointer to the next next Node
                 return;
             }
-            current = current.next; //travesel to next Node and check
+            current = current.next; //traversal to next Node and check
         }
     }
 
