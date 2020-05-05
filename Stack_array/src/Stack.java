@@ -1,11 +1,11 @@
-// Stack (Array implementation)
+import java.util.Arrays;
 
+// Stack (Array implementation)
 public class Stack {
-    int size;
     int top;
     int[] arrayStack;
 
-    public Stack() {
+    public Stack(int size) {
         arrayStack = new int[size]; //declare arrayStack at init
         top = -1; //null
     }
@@ -43,5 +43,9 @@ public class Stack {
         return arrayStack[top];
     }
 
+    public String toString(){
+
+        return Arrays.toString(arrayStack);
+    }
 
 }
