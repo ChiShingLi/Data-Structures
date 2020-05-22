@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("-----");
 
-        System.out.println("First element in min heap: " + myMinHeap.peek()); // 40
+        System.out.println("First element in min heap: " + myMinHeap.peek()); // 20
         System.out.print("Min Heap: ");
         myMinHeap.printHeap(); // 10, 20, 15, 30, 40
         System.out.println();
