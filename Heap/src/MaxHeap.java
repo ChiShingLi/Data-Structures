@@ -4,13 +4,12 @@ public class MaxHeap {
 
     int size;
     int[] array;
-    int currentElementIndex; //pointer pointing at where to insert the next item
+    int currentElementIndex; //pointer pointing at where to insert the next item /also served as a pointer for the delete method
 
     public MaxHeap(int size) {
         //start at index 1
         array = new int[size + 1];
         currentElementIndex = 1; //array starts at index1;
-
     }
 
     //return the first item in the array (heap)
@@ -47,12 +46,31 @@ public class MaxHeap {
         }
     }
 
+    //delete item from heap, could also made it in to a MAX heap sort
+    public void delete() {
+
+        //swap the first and last element
+        swap(1, currentElementIndex - 1);
+        currentElementIndex--; //mark the num as deleted by moving the pointer down
+
+        //if only root, left & right children left
+        if (currentElementIndex > 3) {
+            //check their children
+            //if left child is greater than right child
+            if (array[2] > array[3]) {
+                swap(1, 2); //swap left child with root
+            } else if (array[2] < array[3]) {
+                swap(1, 3); //swap right child with root
+            }
+        }
+    }
+
+
     //print out the heap
     public void printHeap() {
         for (int i = 1; i < currentElementIndex; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
-
-
 }

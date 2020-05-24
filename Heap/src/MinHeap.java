@@ -45,11 +45,31 @@ public class MinHeap {
         }
     }
 
+    //delete item from heap, could also made it in to a MIN heap sort
+    public void delete() {
+
+        //swap the first and last element
+        swap(1, currentElementIndex - 1);
+        currentElementIndex--; //mark the num as deleted by moving the pointer down
+
+        //if only root, left & right children left
+        if (currentElementIndex > 3) {
+            //check their children
+            //if left child is less than right child
+            if (array[2] < array[3]) {
+                swap(1, 2); //swap left child with root
+            } else if (array[2] > array[3]) {
+                swap(1, 3); //swap right child with root
+            }
+        }
+    }
+
     //print out the heap
     public void printHeap() {
         for (int i = 1; i < currentElementIndex; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 
 
