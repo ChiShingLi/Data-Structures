@@ -42,7 +42,30 @@ public class Trie {
         current.endOfWord = true;
     }
 
- 
+    public boolean search(String word) {
+        //root pointer for navigation
+        TrieNode current = root;
+
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i); //get letter
+
+            //check if letter exists
+            TrieNode node = current.children.get(ch);
+            if (node == null) {
+                return false;
+            } else {
+                //move to the next node & check the letter
+                current = node;
+            }
+        }
+
+        //at the end of the loop, return true if endOfWord is true
+        if (current.endOfWord == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 }

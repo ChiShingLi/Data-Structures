@@ -5,7 +5,8 @@ public class Main {
 
         myTrie.insert("hello");
 
-
+        System.out.println("'abc' exists? " + myTrie.search("abc"));
+        System.out.println("'hello' exists? " + myTrie.search("hello"));
 
     }
 
